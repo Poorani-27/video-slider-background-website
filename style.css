@@ -1,0 +1,297 @@
+:root{
+    --f-one:'Montserrat Alternates', sans-serif;
+    --f-bold:'Roboto', sans-serif;
+    --f-three:'Roboto Condensed', sans-serif;
+
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--f-two);
+    height: 100vh;
+    background-color: black;
+    overflow: hidden; 
+}
+/**navbar**/
+header{
+    margin-top: -9px;
+}
+.navbar {
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+.navbar-brand{
+    font-family: var(--f-bold);
+    text-transform: uppercase;
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.1) ;
+    padding-left: 200px;
+}
+#collapsibleNavbar{
+    justify-content: end;
+    margin-right: 40px;
+   
+}
+.navbar-nav{
+    gap: 60px;
+    row-gap: 0;
+}
+.nav-link{
+    font-family: var(--f-bold);
+    padding: 0;
+    text-align: end;
+    
+}
+.nav-link:hover{
+    transform: scale(1.06);
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+}
+
+/**home**/
+#home{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    max-height: 100vh;
+    padding: 10px;
+    background: #000000;
+}
+#home video{
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+
+}
+.content h1{
+    color: #000000;
+    text-transform: capitalize;
+    font-family: var(--f-bold);
+    text-align: center;
+}
+.content{
+    color: #ffffff;
+    font-family: var(--f-bold);
+    z-index: 898;
+    padding: 300px 200px;
+    display: none;
+}
+.content.active{
+  display: block;
+}
+p{
+  color: white;
+}
+.custom-btn{
+    color: #000000;
+    font-family: var(--f-bold);
+    background-color:transparent;
+    border: 0.02px solid black;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.70);
+}
+.media-icons{
+  z-index: 899;
+  margin-top: 320px;
+  margin-right: 90px;
+}
+
+
+*wrapper-icon*
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: var(--f-one);
+    z-index: 888;
+    right: 30px;
+    margin-left: -40px;
+
+
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background:transparent;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ;
+  }
+  
+  .wrapper .tooltip {
+    position: relative;
+    top: 0;
+    font-size: 14px;
+    background:transparent;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ;
+    margin-left: -70px;
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background:transparent;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    right: 15px;
+    opacity: 1;
+    visibility: visible;
+
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+   
+    color: #fff;
+  } 
+  /*slide*/
+    .slider-navigation{
+      z-index: 888;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(80px);
+      margin-top: 20px; 
+      margin-right: 60px;
+    }
+    .slider-navigation .nav-btn{
+      width: 12px;
+      height: 12px;
+      background:whitesmoke;
+      border-radius: 50%;
+      box-shadow: 0 0 2px rgb(0, 0, 0);
+      transition: 0.3s ease;
+      cursor: pointer;
+     
+    }
+    .slider-navigation .nav-btn.active{
+      background: black;
+      transform: scale(1.5s);
+    }
+    .slider-navigation .nav-btn:not(:last-child){
+      margin-right: 20px;
+    }
+    .video-slide{
+      position: absolute;
+      width: 100%;
+      clip-path: circle(0% at 0 50% );
+    }
+    .video-slide.active{
+      clip-path: circle(150% at 0 50% );
+    }
+  @media screen and (max-width: 1040px) {
+    #home{
+      display:flex;
+      flex-direction: column;
+    }
+    #home{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-content: center;
+      width: 100%;
+      max-height: 100vh;
+      padding: 10px;
+      background: #000000;
+  }
+    .content {
+        color: #000000;
+        font-family: var(--f-bold);
+        z-index: 898;
+        padding: 300px 30px;
+        margin-top: -160px;
+    }
+    .wrapper .icon:hover .tooltip {
+      left: 105px;} 
+   
+}
+footer{
+  position: sticky;
+  bottom: 0%;
+  padding: 0%;
+  background: transparent;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.para{
+  text-align: end;
+  font-family: var(--f-three);
+  color: rgb(6, 6, 6);
+  text-transform: capitalize;
+font-size: small;
+padding-right: 2px;
+}
+  @media screen and (max-width: 650px) {
+    #home{
+      display:flex;
+      flex-direction: column;
+    }
+    #home{
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-content: center;
+      width: 100%;
+      max-height: 100vh;
+      padding: 10px;
+      background: #000000;
+  }
+    .content {
+        color: #000000;
+        font-family: var(--f-bold);
+        z-index: 898;
+        padding: 300px 30px;
+        margin-top: -160px;
+    }
+    .wrapper .icon:hover .tooltip {
+      left: 105px;}
+}
